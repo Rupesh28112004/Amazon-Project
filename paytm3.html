@@ -1,0 +1,256 @@
+<html>
+ <head>
+  <title>
+   Paytm Page
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+             
+            
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 00px;
+            padding: 00px;
+            height: 500px;
+            width: 400px;
+            text-align: center;
+
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .header img {
+            height: 30px;
+        }
+        .header .help {
+            color: #00baf2;
+            font-size: 16px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .card {
+            background-color: #e6f7ff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .card img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .card h2 {
+            margin: 10px 0 5px;
+            font-size: 20px;
+            color: #000;
+        }
+        .card p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .card .amount {
+            font-size: 30px;
+            color: #000;
+            margin: 10px 0;
+        }
+        .card .amount .fa-check-circle {
+            color: #00c853;
+        }
+        .card .details {
+            color: #00baf2;
+            margin: 10px 0;
+        }
+        .card .buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .card .buttons button {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 10px 20px;
+            color: #000;
+            cursor: pointer;
+        }
+        .card .buttons button:hover {
+            background-color: #f0f0f0;
+        }
+        .notification {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .notification img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .notification .details {
+            flex-grow: 1;
+            margin-left: 10px;
+        }
+        .notification .details p {
+            margin: 0;
+        }
+        .notification .details .expired {
+            color: red;
+        }
+        .notification button {
+            background-color: #00baf2;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .notification button:hover {
+            background-color: #0099cc;
+        }
+        .banner {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .banner img {
+            width: 100px;
+            height: auto;
+        }
+        .banner h3 {
+            margin: 10px 0;
+            color: #000;
+        }
+        .banner p {
+            color: #666;
+        }
+        .banner button {
+            background-color: #00baf2;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .banner button:hover {
+            background-color: #0099cc;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 0;
+            border-top: 1px solid #ddd;
+            position: fixed;
+            bottom: 2px;
+            width: 380px;
+            margin: 12px;
+        }
+        .footer .icon {
+            text-align: center;
+            color: #666;
+        }
+        .footer .icon i {
+            font-size: 20px;
+        }
+        .footer .icon p {
+            margin: 5px 0 0;
+            font-size: 12px;
+        }
+        .footer .icon.active {
+            color: #00baf2;
+        }
+        
+  </style>
+ </head>
+ <body>
+    <div class="header">
+        <a href="javascript:void(0);" onclick="history.back()"><i class="fas fa-arrow-left"></i></a>
+        <img alt="Paytm Logo" height="30" src="https://storage.googleapis.com/a1aa/image/L4b70GTVapLUEBDFBTgue7ukhZ2SQsTA4heyem9RonDpqsQnA.jpg" width="100"/>
+        <span class="help">Help</span>
+    </div>
+    <div class="content">
+        <div class="card">
+            <img alt="Profile Picture" height="50" src="https://storage.googleapis.com/a1aa/image/aE8BGb1B7fT5Q6O1fXCwtSfyEBWB1VKRmaN2AOCKsbBtqsQnA.jpg" width="50"/>
+            <h2 id="user-name"></h2>
+            <p id="user-bank"></p>
+            <div class="amount" id="user-amount"></div>
+            <p id="user-date"></p>
+            <p class="details" id="user-refNo"></p>
+            <div class="buttons">
+                <button>Check Balance</button>
+                <button>Share</button>
+                <button>Pay Again</button>
+            </div>
+        </div>
+        <div class="notification">
+            <img alt="Jio Logo" height="40" src="https://storage.googleapis.com/a1aa/image/tCvA2IVXW2acD1yzcPQj7aaSo047dh9et4gWcJ0oy9spKL0JA.jpg" width="40"/>
+            <div class="details">
+                <p>Prepaid - <span id="prepaid-number"></span></p>
+                <p class="expired" id="prepaid-status"></p>
+            </div>
+            <button>Recharge</button>
+        </div>
+        <div class="banner">
+            <img alt="Solar Panel" height="100" src="https://storage.googleapis.com/a1aa/image/lt0pCjTLfFzJZKal5ci5beowIfwHofDUefEHAi0cDt17VlF6E.jpg" width="100"/>
+            <h3>Worth upto ₹4321.4 Crores</h3>
+            <p>Waaree Energies IPO is pre-open!</p>
+            <button>Apply Now</button>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="icon active"><i class="fas fa-home"></i><p>Home</p></div>
+        <div class="icon"><i class="fas fa-qrcode"></i><p>Scan</p></div>
+        <div class="icon"><i class="fas fa-percentage"></i><p>Cashback</p></div>
+        <div class="icon"><i class="fas fa-book"></i><p>Passbook</p></div>
+    </div>
+    <!-- <script src="data.js"></script> -->
+    <script src="data.js"></script>
+    <script>
+        // Get the current timestamp in milliseconds
+        const currentTimeInMillis = Date.now();
+    
+        // Create a new Date object using the timestamp
+        const currentDate = new Date(currentTimeInMillis);
+        const pay = JSON.parse(localStorage.getItem('userData'));
+    
+        // Function to format the date
+        function formatDate(date) {
+            const day = date.getDate();
+            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            const month = monthNames[date.getMonth()]; // Get the abbreviated month name
+            return `${day} ${month}`; // e.g., "20 Oct"
+        }
+    
+        // Function to format the time
+        function formatTime(date) {
+            const options = { hour: '2-digit', minute: '2-digit', hour12: false }; // e.g., "14:30"
+            return date.toLocaleTimeString('en-US', options);
+        }
+    
+        // Fill the fields with payData
+        document.getElementById('user-name').textContent = pay.name;
+        document.getElementById('user-amount').innerHTML = `₹${Number(pay.amount)} <i class="fas fa-check-circle"></i>`;
+        document.getElementById('user-date').textContent = formatDate(currentDate) + " , " + formatTime(currentDate);
+        document.getElementById('user-refNo').textContent = `Ref. No: ${pay.refNo}`;
+        document.getElementById('prepaid-status').textContent = "Success";
+    </script>
+    
+    
+</body>
+</html>

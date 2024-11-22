@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            width: 200px; /* Adjust width as needed */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        .vertical-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            border: 3px solid rgb(245, 245, 245); 
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Pay</h1>
+    <div class="form-container1">
+        <label style="padding: 13px;" for="nameInput">Name</label>
+        <input style="padding-left: 10px;" type="text" id="nameInput" placeholder="Enter name" class="js-name"/>
+    </div>
+
+    <div class="form-container2">
+        <label style="padding: 13px;" for="refInput">Ref No.</label>
+        <input type="text" id="refInput" placeholder="Enter Ref No." class="js-refno"/>
+    </div>
+
+    <div class="form-container3">
+        <label style="padding: 13px;" for="amountInput">Amount</label>
+        <input type="text" id="amountInput" placeholder="Enter Amount" class="js-amount"/>
+    </div>
+
+    <div class="form-container4">
+        <label style="padding: 35px; margin-right: 50px;" for="UID">UID</label>
+        <input style="padding-left: 10px;" type="text" id="UID" placeholder="Enter UID" class="js-uid"/>
+    </div>
+
+    <div class="vertical-center" id="openPageButton">
+        <button style="color: black; font-size: larger; border-radius: 20px; background-color: rgb(111, 154, 214);">
+            Done
+        </button>
+    </div>
+
+    <script>
+        document.getElementById("openPageButton").addEventListener("click", function() {
+            // Get input values
+            const name = document.querySelector('.js-name').value;
+            const refNo = document.querySelector('.js-refno').value;
+            const amount = document.querySelector('.js-amount').value;
+            const uid = document.querySelector('.js-uid').value;
+
+            // Create an object to hold the user data
+            const userData = {
+                name: name,
+                refNo: refNo,
+                amount: amount,
+                uid: uid
+            };
+
+            // Save user data to local storage
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+            // Redirect to paytm3.html
+            window.location.href = "paytm3.html"; // Replace with your target URL
+        });
+    </script>
+</body>
+</html>
